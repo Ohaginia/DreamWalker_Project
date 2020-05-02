@@ -1,0 +1,68 @@
+digraph G {
+node [shape=box];
+"base_link" [label="base_link"];
+"A0_link" [label="A0_link"];
+"A1_link" [label="A1_link"];
+"A2_link" [label="A2_link"];
+"A3_link" [label="A3_link"];
+"A4_link" [label="A4_link"];
+"B0_link" [label="B0_link"];
+"B1_link" [label="B1_link"];
+"B2_link" [label="B2_link"];
+"B3_link" [label="B3_link"];
+"B4_link" [label="B4_link"];
+"C0_link" [label="C0_link"];
+"C1_link" [label="C1_link"];
+"C2_link" [label="C2_link"];
+"C3_link" [label="C3_link"];
+"C4_link" [label="C4_link"];
+"D0_link" [label="D0_link"];
+"D1_link" [label="D1_link"];
+"D2_link" [label="D2_link"];
+"D3_link" [label="D3_link"];
+"D4_link" [label="D4_link"];
+"body_link" [label="body_link"];
+node [shape=ellipse, color=blue, fontcolor=blue];
+"base_link" -> "A0_joint" [label="xyz: 0.3 -0.083 0 \nrpy: 0 -0 0"]
+"A0_joint" -> "A0_link"
+"A0_link" -> "A1_joint" [label="xyz: 0.0835 -0 0 \nrpy: 0 -0 0"]
+"A1_joint" -> "A1_link"
+"A1_link" -> "A2_joint" [label="xyz: 0 -0.2095 0 \nrpy: 0 -0 0"]
+"A2_joint" -> "A2_link"
+"A2_link" -> "A3_joint" [label="xyz: 0 -0.065 -0.32 \nrpy: 0 -0 0"]
+"A3_joint" -> "A3_link"
+"A3_link" -> "A4_joint" [label="xyz: 0 -0 -0.443 \nrpy: 0 -0 0"]
+"A4_joint" -> "A4_link"
+"base_link" -> "B0_joint" [label="xyz: 0.3 0.083 0 \nrpy: 0 -0 0"]
+"B0_joint" -> "B0_link"
+"B0_link" -> "B1_joint" [label="xyz: 0.0835 0 0 \nrpy: 0 -0 0"]
+"B1_joint" -> "B1_link"
+"B1_link" -> "B2_joint" [label="xyz: 0 0.2095 0 \nrpy: 0 -0 0"]
+"B2_joint" -> "B2_link"
+"B2_link" -> "B3_joint" [label="xyz: 0 0.065 -0.32 \nrpy: 0 -0 0"]
+"B3_joint" -> "B3_link"
+"B3_link" -> "B4_joint" [label="xyz: 0 0 -0.443 \nrpy: 0 -0 0"]
+"B4_joint" -> "B4_link"
+"base_link" -> "C0_joint" [label="xyz: -0.3 -0.083 0 \nrpy: 0 -0 0"]
+"C0_joint" -> "C0_link"
+"C0_link" -> "C1_joint" [label="xyz: -0.0835 -0 0 \nrpy: 0 -0 0"]
+"C1_joint" -> "C1_link"
+"C1_link" -> "C2_joint" [label="xyz: -0 -0.2095 0 \nrpy: 0 -0 0"]
+"C2_joint" -> "C2_link"
+"C2_link" -> "C3_joint" [label="xyz: -0 -0.065 -0.32 \nrpy: 0 -0 0"]
+"C3_joint" -> "C3_link"
+"C3_link" -> "C4_joint" [label="xyz: -0 -0 -0.443 \nrpy: 0 -0 0"]
+"C4_joint" -> "C4_link"
+"base_link" -> "D0_joint" [label="xyz: -0.3 0.083 0 \nrpy: 0 -0 0"]
+"D0_joint" -> "D0_link"
+"D0_link" -> "D1_joint" [label="xyz: -0.0835 0 0 \nrpy: 0 -0 0"]
+"D1_joint" -> "D1_link"
+"D1_link" -> "D2_joint" [label="xyz: -0 0.2095 0 \nrpy: 0 -0 0"]
+"D2_joint" -> "D2_link"
+"D2_link" -> "D3_joint" [label="xyz: -0 0.065 -0.32 \nrpy: 0 -0 0"]
+"D3_joint" -> "D3_link"
+"D3_link" -> "D4_joint" [label="xyz: -0 0 -0.443 \nrpy: 0 -0 0"]
+"D4_joint" -> "D4_link"
+"base_link" -> "body_link_joint" [label="xyz: 0 0 0 \nrpy: 0 -0 0"]
+"body_link_joint" -> "body_link"
+}

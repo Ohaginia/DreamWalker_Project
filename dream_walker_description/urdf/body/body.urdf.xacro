@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://ros.org/wiki/xacro">
+
+  <xacro:include filename="$(find dream_walker_description)/urdf/body/body.gazebo.xacro"/>
+
+  <xacro:macro name="body" params="parent">
+    <joint name="body_link_joint" type="fixed">
+      <parent link="${parent}"/>
+      <child link="body_link"/>
+    </joint>
+
+    <link name="body_link">
+      <visual>
+        <geometry>
+          <mesh filename="package://dream_walker_description/meshes/body.STL"/>
+        </geometry>
+        <material name="">
+          <color rgba="0.8 0.8 0.8 2.0"/>
+        </material>
+      </visual>
+      <collision>
+        <geometry>
+          <mesh filename="package://dream_walker_description/meshes/body.STL"/>
+        </geometry>
+      </collision>
+      <inertial>
+        <origin xyz="0 0 0"/>
+        <mass value="3.0"/>
+        <inertia ixx="0.027819" ixy="1.0E-6" ixz="0" iyy="0.106496" iyz="0" izz="0.113695" />
+      </inertial>
+    </link>
+  </xacro:macro>
+
+</robot>

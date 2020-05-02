@@ -1,0 +1,92 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://ros.org/wiki/xacro">
+
+
+  <property name="mass0" value="1.75"/>
+  <property name="mass1" value="1.74"/>
+  <property name="mass2" value="3.66"/>
+  <property name="mass3" value="1.72"/>
+
+
+  <property name="x0" value="0.26100"/>
+  <property name="x1" value="0.11810"/>
+  <property name="x2" value="0.00440"/>
+  <property name="x3" value="0.00000"/>
+  <property name="x4" value="0.00000"/>
+
+  <property name="y0" value="0.082980"/>
+  <property name="y1" value="0.001110"/>
+  <property name="y2" value="0.161810"/>
+  <property name="y3" value="0.111690"/>
+  <property name="y4" value="0.002140"/>
+
+  <property name="z0" value="-0.00001"/>
+  <property name="z1" value="-0.00004"/>
+  <property name="z2" value="-0.09715"/>
+  <property name="z3" value="-0.41291"/>
+  <property name="z4" value="-0.25289"/>
+
+  <property name="joint_x0" value="0.30000"/>
+  <property name="joint_x1" value="0.08350"/>
+  <property name="joint_x2" value="0.00000"/>
+  <property name="joint_x3" value="0.00000"/>
+  <property name="joint_x4" value="0.00000"/>
+
+  <property name="joint_y0" value="0.08300"/>
+  <property name="joint_y1" value="0.00000"/>
+  <property name="joint_y2" value="0.20950"/>
+  <property name="joint_y3" value="0.06500"/>
+  <property name="joint_y4" value="0.00000"/>
+
+  <property name="joint_z0" value="0.000000"/>
+  <property name="joint_z1" value="0.000000"/>
+  <property name="joint_z2" value="0.000000"/>
+  <property name="joint_z3" value="-0.32000"/>
+  <property name="joint_z4" value="-0.443000"/>
+
+  <property name="visual_x0" value="0.300000"/>
+  <property name="visual_x1" value="0.3835"/>
+  <property name="visual_x2" value="0.3835"/>
+  <property name="visual_x3" value="0.3835"/>
+
+  <property name="visual_y0" value="0.083000"/>
+  <property name="visual_y1" value="0.083000"/>
+  <property name="visual_y2" value="0.292500"/>
+  <property name="visual_y3" value="0.357500"/>
+
+  <property name="visual_z0" value="0.000000"/>
+  <property name="visual_z1" value="0.000000"/>
+  <property name="visual_z2" value="0.000000"/>
+  <property name="visual_z3" value="0.32000"/>
+
+  <property name="ixx0" value="0.002137"/>
+  <property name="ixx1" value="0.00229"/>
+  <property name="ixx2" value="0.075241"/>
+  <property name="ixx3" value="0.026984"/>
+
+  <property name="ixy0" value="1.0E-06"/>
+  <property name="ixy1" value="0.000008"/>
+  <property name="ixy2" value="0"/>
+  <property name="ixy3" value="0"/>
+
+  <property name="ixz0" value="5.0E-06"/>
+  <property name="ixz1" value="1.0E-06"/>
+  <property name="ixz2" value="5.0E-06"/>
+  <property name="ixz3" value="0"/>
+
+  <property name="iyy0" value="0.002443"/>
+  <property name="iyy1" value="0.002657"/>
+  <property name="iyy2" value="0.069683"/>
+  <property name="iyy3" value="0.026649"/>
+
+  <property name="iyz0" value="0"/>
+  <property name="iyz1" value="1.0E-06"/>
+  <property name="iyz2" value="0.013776"/>
+  <property name="iyz3" value="0.000717"/>
+
+  <property name="izz0" value="0.002444"/>
+  <property name="izz1" value="0.002511"/>
+  <property name="izz2" value="0.011896"/>
+  <property name="izz3" value="0.001426"/>
+
+</robot>

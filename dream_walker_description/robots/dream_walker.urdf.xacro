@@ -1,0 +1,204 @@
+<?xml version="1.0"?>
+ <robot name="dream_walker" xmlns:xacro="http://ros.org/wiki/xacro">
+  <xacro:include filename="$(find dream_walker_description)/urdf/body/body.urdf.xacro"/>
+  <xacro:include filename="$(find dream_walker_description)/urdf/leg/leg.param.xacro"/>
+  <xacro:include filename="$(find dream_walker_description)/urdf/leg/leg.urdf.xacro"/>
+
+  <!-- body -->
+  <link name="base_link"/>
+  <xacro:body parent="base_link">
+  </xacro:body>
+
+  <!-- leg -->
+  <xacro:zero_leg prefix="A0" parent="base">
+    <origin xyz="${joint_x0} -${joint_y0} ${joint_z0}" rpy="0 0 0"/>
+    <origin xyz="-${joint_x0} ${joint_y0} -${joint_z0}"/>
+    <origin xyz="${x0} -${y0} ${z0}"/> 
+    <inertia ixx="${ixx0}" ixy="${ixy0}" ixz="${ixz0}" iyy="${iyy0}" iyz="${iyz0}" izz="${izz0}"/>
+  </xacro:zero_leg>
+  <xacro:zero_leg prefix="B0" parent="base">
+    <origin xyz="${joint_x0} ${joint_y0} ${joint_z0}" rpy="0 0 0"/>
+    <origin xyz="-${joint_x0} -${joint_y0} -${joint_z0}"/>
+    <origin xyz="${x0} ${y0} ${z0}"/>
+    <inertia ixx="${ixx0}" ixy="${ixy0}" ixz="${ixz0}" iyy="${iyy0}" iyz="${iyz0}" izz="${izz0}"/>
+  </xacro:zero_leg>
+  <xacro:zero_leg prefix="C0" parent="base">
+    <origin xyz="-${joint_x0} -${joint_y0} ${joint_z0}" rpy="0 0 0"/>
+    <origin xyz="${joint_x0} ${joint_y0} -${joint_z0}"/>
+    <origin xyz="-${x0} -${y0} ${z0}"/> 
+    <inertia ixx="${ixx0}" ixy="-${ixy0}" ixz="${ixz0}" iyy="${iyy0}" iyz="${iyz0}" izz="${izz0}"/>
+  </xacro:zero_leg>
+  <xacro:zero_leg prefix="D0" parent="base">
+    <origin xyz="-${joint_x0} ${joint_y0} ${joint_z0}" rpy="0 0 0"/>
+    <origin xyz="${joint_x0} -${joint_y0} -${joint_z0}"/>
+    <origin xyz="-${x0} ${y0} ${z0}"/> 
+    <inertia ixx="${ixx0}" ixy="-${ixy0}" ixz="${ixz0}" iyy="${iyy0}" iyz="${iyz0}" izz="${izz0}"/>
+  </xacro:zero_leg>
+
+  <xacro:first_leg prefix="A1" parent="A0">
+    <origin xyz="${joint_x1} -${joint_y1} ${joint_z1}" rpy="0 0 0"/>
+    <origin xyz="-${visual_x1} ${visual_y1} -${visual_z1}"/>
+    <origin xyz="${x1} -${y1} ${z1}"/> 
+    <inertia ixx="${ixx1}" ixy="${ixy1}" ixz="${ixz1}" iyy="${iyy1}" iyz="${iyz1}" izz="${izz1}"/>
+  </xacro:first_leg>
+  <xacro:first_leg prefix="B1" parent="B0">
+    <origin xyz="${joint_x1} ${joint_y1} ${joint_z1}" rpy="0 0 0"/>
+    <origin xyz="-${visual_x1} -${visual_y1} -${visual_z1}"/>
+    <origin xyz="${x1} ${y1} ${z1}"/>
+    <inertia ixx="${ixx1}" ixy="${ixy1}" ixz="${ixz1}" iyy="${iyy1}" iyz="${iyz1}" izz="${izz1}"/>
+  </xacro:first_leg>
+  <xacro:first_leg prefix="C1" parent="C0">
+    <origin xyz="-${joint_x1} -${joint_y1} ${joint_z1}" rpy="0 0 0"/>
+    <origin xyz="${visual_x1} ${visual_y1} -${visual_z1}"/>
+    <origin xyz="-${x1} -${y1} ${z1}"/> 
+    <inertia ixx="${ixx1}" ixy="-${ixy1}" ixz="${ixz1}" iyy="${iyy1}" iyz="${iyz1}" izz="${izz1}"/>
+  </xacro:first_leg>
+  <xacro:first_leg prefix="D1" parent="D0">
+    <origin xyz="-${joint_x1} ${joint_y1} ${joint_z1}" rpy="0 0 0"/>
+    <origin xyz="${visual_x1} -${visual_y1} -${visual_z1}"/>
+    <origin xyz="-${x1} ${y1} ${z1}"/>
+    <inertia ixx="${ixx1}" ixy="-${ixy1}" ixz="${ixz1}" iyy="${iyy1}" iyz="${iyz1}" izz="${izz1}"/>
+  </xacro:first_leg>
+
+  <xacro:second_leg prefix="A2" parent="A1">
+    <origin xyz="${joint_x2} -${joint_y2} ${joint_z2}" rpy="0 0 0"/>
+    <origin xyz="-${visual_x2} ${visual_y2} ${visual_z2}"/>
+    <origin xyz="${x2} -${y2} ${z2}"/>
+    <inertia ixx="${ixx2}" ixy="${ixy2}" ixz="-${ixz2}" iyy="${iyy2}" iyz="${iyz2}" izz="${izz2}"/>
+  </xacro:second_leg>
+
+  <xacro:second_leg prefix="B2" parent="B1">
+    <origin xyz="${joint_x2} ${joint_y2} ${joint_z2}" rpy="0 0 0"/>
+    <origin xyz="-${visual_x2} -${visual_y2} ${visual_z2}"/>
+    <origin xyz="${x2} ${y2} ${z2}"/>
+    <inertia ixx="${ixx2}" ixy="${ixy2}" ixz="${ixz2}" iyy="${iyy2}" iyz="-${iyz2}" izz="${izz2}"/>
+  </xacro:second_leg>
+
+  <xacro:second_leg prefix="C2" parent="C1">
+    <origin xyz="-${joint_x2} -${joint_y2} ${joint_z2}" rpy="0 0 0"/>
+    <origin xyz="${visual_x2} ${visual_y2} ${visual_z2}"/>
+    <origin xyz="-${x2} -${y2} ${z2}"/>
+    <inertia ixx="${ixx2}" ixy="${ixy2}" ixz="-${ixz2}" iyy="${iyy2}" iyz="${iyz2}" izz="${izz2}"/>
+  </xacro:second_leg>
+
+  <xacro:second_leg prefix="D2" parent="D1">
+    <origin xyz="-${joint_x2} ${joint_y2} ${joint_z2}" rpy="0 0 0"/>
+    <origin xyz="${visual_x2} -${visual_y2} ${visual_z2}"/>
+    <origin xyz="-${x2} ${y2} ${z2}"/>
+    <inertia ixx="${ixx2}" ixy="${ixy2}" ixz="${ixz2}" iyy="${iyy2}" iyz="-${iyz2}" izz="${izz2}"/>
+  </xacro:second_leg>
+
+  <xacro:third_leg prefix="A3" parent="A2">
+    <origin xyz="${joint_x3} -${joint_y3} ${joint_z3}" rpy="0 0 0"/>
+    <origin xyz="-${visual_x3} ${visual_y3} ${visual_z3}"/>
+    <origin xyz="${x3} -${y3} ${z3}"/>
+    <inertia ixx="${ixx3}" ixy="${ixy3}" ixz="-${ixz3}" iyy="${iyy3}" iyz="${iyz3}" izz="${izz3}"/>
+  </xacro:third_leg>
+
+  <xacro:third_leg prefix="B3" parent="B2">
+    <origin xyz="${joint_x3} ${joint_y3} ${joint_z3}" rpy="0 0 0"/>
+    <origin xyz="-${visual_x3} -${visual_y3} ${visual_z3}"/>
+    <origin xyz="${x3} ${y3} ${z3}"/>
+    <inertia ixx="${ixx3}" ixy="${ixy3}" ixz="${ixz3}" iyy="${iyy3}" iyz="-${iyz3}" izz="${izz3}"/>
+  </xacro:third_leg>
+
+  <xacro:third_leg prefix="C3" parent="C2">
+    <origin xyz="-${joint_x3} -${joint_y3} ${joint_z3}" rpy="0 0 0"/>
+    <origin xyz="${visual_x3} ${visual_y3} ${visual_z3}"/>
+    <origin xyz="-${x3} -${y3} ${z3}"/>
+    <inertia ixx="${ixx3}" ixy="${ixy3}" ixz="-${ixz3}" iyy="${iyy3}" iyz="${iyz3}" izz="${izz3}"/>
+  </xacro:third_leg>
+
+  <xacro:third_leg prefix="D3" parent="D2">
+    <origin xyz="-${joint_x3} ${joint_y3} ${joint_z3}" rpy="0 0 0"/>
+    <origin xyz="${visual_x3} -${visual_y3} ${visual_z3}"/>
+    <origin xyz="-${x3} ${y3} ${z3}"/>
+    <inertia ixx="${ixx3}" ixy="${ixy3}" ixz="${ixz3}" iyy="${iyy3}" iyz="-${iyz3}" izz="${izz3}"/>
+  </xacro:third_leg>
+
+  <xacro:fourth_leg prefix="A4" parent="A3">
+    <origin xyz="${joint_x4} -${joint_y4} ${joint_z4}" rpy="0 0 0"/>
+  </xacro:fourth_leg>
+
+  <xacro:fourth_leg prefix="B4" parent="B3">
+    <origin xyz="${joint_x4} ${joint_y4} ${joint_z4}" rpy="0 0 0"/>
+  </xacro:fourth_leg>
+
+  <xacro:fourth_leg prefix="C4" parent="C3">
+    <origin xyz="-${joint_x4} -${joint_y4} ${joint_z4}" rpy="0 0 0"/>
+  </xacro:fourth_leg>
+
+  <xacro:fourth_leg prefix="D4" parent="D3">
+    <origin xyz="-${joint_x4} ${joint_y4} ${joint_z4}" rpy="0 0 0"/>
+  </xacro:fourth_leg>
+
+
+  <!-- ===============  Transmission =============== -->
+  <xacro:leg_trans prefix="A1"/>
+  <xacro:leg_trans prefix="A2"/>
+  <xacro:leg_trans prefix="A3"/>
+  <xacro:leg_trans prefix="B1"/>
+  <xacro:leg_trans prefix="B2"/>
+  <xacro:leg_trans prefix="B3"/>
+  <xacro:leg_trans prefix="C1"/>
+  <xacro:leg_trans prefix="C2"/>
+  <xacro:leg_trans prefix="C3"/>
+  <xacro:leg_trans prefix="D1"/>
+  <xacro:leg_trans prefix="D2"/>
+  <xacro:leg_trans prefix="D3"/>
+
+  <!-- =============== Gazebo =============== -->
+  <gazebo>
+    <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
+      <!-- <robotNamespace>fourth_robot</robotNamespace> -->
+    </plugin>
+  </gazebo>
+
+  <!-- Body -->
+  <gazebo>
+    <plugin filename="libgazebo_ros_p3d.so" name="p3d_base_controller">
+      <alwaysOn>true</alwaysOn>
+      <updateRate>25.0</updateRate>
+      <bodyName>base_link</bodyName>
+      <topicName>odom/ground_truth</topicName>
+      <gaussianNoise>0.01</gaussianNoise>
+      <frameName>world</frameName>
+      <xyzOffsets>0 0 0</xyzOffsets>
+      <rpyOffsets>0 0 0</rpyOffsets>
+    </plugin>
+  </gazebo>
+  <gazebo>
+    <plugin filename="libgazebo_ros_control.so" name="gazebo_ros_control">
+      <robotNamespace>/dream_walker</robotNamespace>
+      <legacyModeNS>true</legacyModeNS>
+    </plugin>
+  </gazebo>
+
+  <xacro:body_gazebo/>
+
+  <xacro:zero_gazebo prefix="A0"/>
+  <xacro:zero_gazebo prefix="B0"/>
+  <xacro:zero_gazebo prefix="C0"/>
+  <xacro:zero_gazebo prefix="D0"/>
+
+  <xacro:first_gazebo prefix="A1"/>
+  <xacro:first_gazebo prefix="B1"/>
+  <xacro:first_gazebo prefix="C1"/>
+  <xacro:first_gazebo prefix="D1"/>
+  
+  <xacro:second_gazebo prefix="A2"/>
+  <xacro:second_gazebo prefix="B2"/>
+  <xacro:second_gazebo prefix="C2"/>
+  <xacro:second_gazebo prefix="D2"/>
+
+  <xacro:third_gazebo prefix="A3"/>
+  <xacro:third_gazebo prefix="B3"/>
+  <xacro:third_gazebo prefix="C3"/>
+  <xacro:third_gazebo prefix="D3"/>
+
+  <xacro:fourth_gazebo prefix="A4"/>
+  <xacro:fourth_gazebo prefix="B4"/>
+  <xacro:fourth_gazebo prefix="C4"/>
+  <xacro:fourth_gazebo prefix="D4"/>
+
+</robot>

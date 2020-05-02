@@ -1,0 +1,12 @@
+<launch>
+    <arg name="lite"  default="false" />
+
+    <include file="$(find dream_walker_config)/launch/bringup.launch">
+        <arg name="gazebo" value="true"/>
+        <arg name="lite" value="$(arg lite)"/>
+    </include>
+
+    <include file="$(find champ_gazebo)/launch/gazebo.launch">
+        <arg name="lite" value="$(arg lite)"/>
+    </include>    
+</launch>

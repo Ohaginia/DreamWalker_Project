@@ -1,0 +1,139 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://ros.org/wiki/xacro">
+
+  <xacro:include filename="$(find dream_walker_description)/urdf/leg/leg.param.xacro"/>
+  <xacro:include filename="$(find dream_walker_description)/urdf/leg/leg.gazebo.xacro"/>
+  <xacro:include filename="$(find dream_walker_description)/urdf/leg/leg.transmission.xacro"/>
+  <xacro:include filename="$(find dream_walker_description)/urdf/leg/color.xacro"/>
+
+
+  <xacro:macro name="zero_leg" params="prefix parent *joint_origin *visual_origin *inertial_origin *inertia">
+    <joint name="${prefix}_joint" type="fixed">
+      <insert_block name="joint_origin"/>
+      <parent link="${parent}_link"/>
+      <child link="${prefix}_link"/>
+      <axis xyz="0 0 0"/>
+    </joint>
+
+    <link name="${prefix}_link">
+      <visual>
+        <insert_block name="visual_origin"/>
+        <geometry>
+          <mesh filename="package://dream_walker_description/meshes/${prefix}_link.STL"/>
+        </geometry>
+        <material name="black"/>
+      </visual>
+      <collision>
+        <geometry>
+          <mesh filename="package://dream_walker_description/meshes/${prefix}_link.STL"/>
+        </geometry>
+      </collision>
+      <inertial>
+        <insert_block name="inertial_origin"/>
+        <mass value="${mass0}"/>
+        <insert_block name="inertia"/>
+      </inertial>
+    </link>
+  </xacro:macro>
+  
+  <xacro:macro name="first_leg" params="prefix parent *joint_origin *visual_origin *inertial_origin *inertia">
+    <joint name="${prefix}_joint" type="revolute">
+      <insert_block name="joint_origin"/>
+      <parent link="${parent}_link"/>
+      <child link="${prefix}_link"/>
+      <axis xyz="1 0 0"/>
+      <limit lower="-3.1416" upper="3.1416" effort="1000" velocity="1000"/>
+    </joint>
+
+    <link name="${prefix}_link">
+      <visual>
+        <insert_block name="visual_origin"/>
+        <geometry>
+          <mesh filename="package://dream_walker_description/meshes/${prefix}_link.STL"/>
+        </geometry>
+        <material name="black"/>
+      </visual>
+      <collision>
+        <geometry>
+          <mesh filename="package://dream_walker_description/meshes/${prefix}_link.STL"/>
+        </geometry>
+      </collision>
+      <inertial>
+        <insert_block name="inertial_origin"/>
+        <mass value="${mass1}"/>
+        <insert_block name="inertia"/>
+      </inertial>
+    </link>
+  </xacro:macro>
+
+  <xacro:macro name="second_leg" params="prefix parent *joint_origin *visual_origin *inertial_origin *inertia">
+    <joint name="${prefix}_joint" type="revolute">
+      <insert_block name="joint_origin"/>
+      <parent link="${parent}_link"/>
+      <child link="${prefix}_link"/>
+      <axis xyz="0 1 0"/>
+      <limit lower="-9.42" upper="9.42" effort="1000" velocity="1000"/>
+    </joint>
+
+    <link name="${prefix}_link">
+      <visual>
+        <insert_block name="visual_origin"/>
+        <geometry>
+          <mesh filename="package://dream_walker_description/meshes/${prefix}_link.STL"/>
+        </geometry>
+        <material name="red"/>
+      </visual>
+      <collision>
+        <geometry>
+          <mesh filename="package://dream_walker_description/meshes/${prefix}_link.STL"/>
+        </geometry>
+      </collision>
+      <inertial>
+        <insert_block name="inertial_origin"/>
+        <mass value="${mass2}"/>
+        <insert_block name="inertia"/>
+      </inertial>
+    </link>
+  </xacro:macro>
+
+  <xacro:macro name="third_leg" params="prefix parent *joint_origin *visual_origin *inertial_origin *inertia">
+    <joint name="${prefix}_joint" type="revolute">
+      <insert_block name="joint_origin"/>
+      <parent link="${parent}_link"/>
+      <child link="${prefix}_link"/>
+      <axis xyz="0 1 0"/>
+      <limit lower="-9.42" upper="9.42" effort="1000" velocity="1000"/>
+    </joint>
+
+    <link name="${prefix}_link">
+      <visual>
+        <insert_block name="visual_origin"/>
+        <geometry>
+          <mesh filename="package://dream_walker_description/meshes/${prefix}_link.STL"/>
+        </geometry>
+        <material name="silver"/>
+      </visual>
+      <collision>
+        <geometry>
+          <mesh filename="package://dream_walker_description/meshes/${prefix}_link.STL"/>
+        </geometry>
+      </collision>
+      <inertial>
+        <insert_block name="inertial_origin"/>
+        <mass value="${mass3}"/>
+        <insert_block name="inertia"/>
+      </inertial>
+    </link>
+  </xacro:macro>
+
+  <xacro:macro name="fourth_leg" params="prefix parent *joint_origin">
+    <joint name="${prefix}_joint" type="fixed">
+      <insert_block name="joint_origin"/>
+      <parent link="${parent}_link"/>
+      <child link="${prefix}_link"/>
+    </joint>
+
+    <link name="${prefix}_link"/>
+  </xacro:macro>
+
+</robot>
