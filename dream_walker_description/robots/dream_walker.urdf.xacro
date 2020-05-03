@@ -12,107 +12,120 @@
   <!-- leg -->
   <xacro:zero_leg prefix="A0" parent="base">
     <origin xyz="${joint_x0} -${joint_y0} ${joint_z0}" rpy="0 0 0"/>
-    <origin xyz="-${joint_x0} ${joint_y0} -${joint_z0}"/>
-    <origin xyz="${x0} -${y0} ${z0}"/> 
-    <inertia ixx="${ixx0}" ixy="${ixy0}" ixz="${ixz0}" iyy="${iyy0}" iyz="${iyz0}" izz="${izz0}"/>
+    <origin xyz="-${visual_x0} ${visual_y0} -${visual_z0}"/>
+    <origin xyz="-${visual_x0} ${visual_y0} -${visual_z0}"/>
+    <origin xyz="-${x0} ${y0} ${z0}"/>
+    <inertia ixx="${ixx0}" ixy="-${ixy0}" ixz="${ixz0}" iyy="${iyy0}" iyz="${iyz0}" izz="${izz0}"/>
   </xacro:zero_leg>
   <xacro:zero_leg prefix="B0" parent="base">
     <origin xyz="${joint_x0} ${joint_y0} ${joint_z0}" rpy="0 0 0"/>
-    <origin xyz="-${joint_x0} -${joint_y0} -${joint_z0}"/>
-    <origin xyz="${x0} ${y0} ${z0}"/>
+    <origin xyz="-${visual_x0} -${visual_y0} -${visual_z0}"/>
+    <origin xyz="-${visual_x0} -${visual_y0} -${visual_z0}"/>
+    <origin xyz="-${x0} -${y0} ${z0}"/>
     <inertia ixx="${ixx0}" ixy="${ixy0}" ixz="${ixz0}" iyy="${iyy0}" iyz="${iyz0}" izz="${izz0}"/>
   </xacro:zero_leg>
   <xacro:zero_leg prefix="C0" parent="base">
     <origin xyz="-${joint_x0} -${joint_y0} ${joint_z0}" rpy="0 0 0"/>
-    <origin xyz="${joint_x0} ${joint_y0} -${joint_z0}"/>
-    <origin xyz="-${x0} -${y0} ${z0}"/> 
+    <origin xyz="${visual_x0} ${visual_y0} -${visual_z0}"/>
+    <origin xyz="${visual_x0} ${visual_y0} -${visual_z0}"/>
+    <origin xyz="${x0} ${y0} ${z0}"/>
     <inertia ixx="${ixx0}" ixy="-${ixy0}" ixz="${ixz0}" iyy="${iyy0}" iyz="${iyz0}" izz="${izz0}"/>
   </xacro:zero_leg>
   <xacro:zero_leg prefix="D0" parent="base">
     <origin xyz="-${joint_x0} ${joint_y0} ${joint_z0}" rpy="0 0 0"/>
-    <origin xyz="${joint_x0} -${joint_y0} -${joint_z0}"/>
-    <origin xyz="-${x0} ${y0} ${z0}"/> 
+    <origin xyz="${visual_x0} -${visual_y0} -${visual_z0}"/>
+    <origin xyz="${visual_x0} -${visual_y0} -${visual_z0}"/>
+    <origin xyz="${x0} -${y0} ${z0}"/>
     <inertia ixx="${ixx0}" ixy="-${ixy0}" ixz="${ixz0}" iyy="${iyy0}" iyz="${iyz0}" izz="${izz0}"/>
   </xacro:zero_leg>
 
   <xacro:first_leg prefix="A1" parent="A0">
     <origin xyz="${joint_x1} -${joint_y1} ${joint_z1}" rpy="0 0 0"/>
     <origin xyz="-${visual_x1} ${visual_y1} -${visual_z1}"/>
-    <origin xyz="${x1} -${y1} ${z1}"/> 
+    <origin xyz="-${visual_x1} ${visual_y1} -${visual_z1}"/>
+    <origin xyz="-${x1} ${y1} ${z1}"/>
     <inertia ixx="${ixx1}" ixy="${ixy1}" ixz="${ixz1}" iyy="${iyy1}" iyz="${iyz1}" izz="${izz1}"/>
   </xacro:first_leg>
   <xacro:first_leg prefix="B1" parent="B0">
     <origin xyz="${joint_x1} ${joint_y1} ${joint_z1}" rpy="0 0 0"/>
     <origin xyz="-${visual_x1} -${visual_y1} -${visual_z1}"/>
-    <origin xyz="${x1} ${y1} ${z1}"/>
+    <origin xyz="-${visual_x1} -${visual_y1} -${visual_z1}"/>
+    <origin xyz="-${x1} -${y1} ${z1}"/>
     <inertia ixx="${ixx1}" ixy="${ixy1}" ixz="${ixz1}" iyy="${iyy1}" iyz="${iyz1}" izz="${izz1}"/>
   </xacro:first_leg>
   <xacro:first_leg prefix="C1" parent="C0">
     <origin xyz="-${joint_x1} -${joint_y1} ${joint_z1}" rpy="0 0 0"/>
     <origin xyz="${visual_x1} ${visual_y1} -${visual_z1}"/>
-    <origin xyz="-${x1} -${y1} ${z1}"/> 
+    <origin xyz="${visual_x1} ${visual_y1} -${visual_z1}"/>
+    <origin xyz="${x1} ${y1} ${z1}"/>
     <inertia ixx="${ixx1}" ixy="-${ixy1}" ixz="${ixz1}" iyy="${iyy1}" iyz="${iyz1}" izz="${izz1}"/>
   </xacro:first_leg>
   <xacro:first_leg prefix="D1" parent="D0">
     <origin xyz="-${joint_x1} ${joint_y1} ${joint_z1}" rpy="0 0 0"/>
     <origin xyz="${visual_x1} -${visual_y1} -${visual_z1}"/>
-    <origin xyz="-${x1} ${y1} ${z1}"/>
+    <origin xyz="${visual_x1} -${visual_y1} -${visual_z1}"/>
+    <origin xyz="${x1} -${y1} ${z1}"/>
     <inertia ixx="${ixx1}" ixy="-${ixy1}" ixz="${ixz1}" iyy="${iyy1}" iyz="${iyz1}" izz="${izz1}"/>
   </xacro:first_leg>
 
   <xacro:second_leg prefix="A2" parent="A1">
     <origin xyz="${joint_x2} -${joint_y2} ${joint_z2}" rpy="0 0 0"/>
     <origin xyz="-${visual_x2} ${visual_y2} ${visual_z2}"/>
-    <origin xyz="${x2} -${y2} ${z2}"/>
+    <origin xyz="-${visual_x2} ${visual_y2} ${visual_z2}"/>
+    <origin xyz="${x2} ${y2} ${z2}"/>
     <inertia ixx="${ixx2}" ixy="${ixy2}" ixz="-${ixz2}" iyy="${iyy2}" iyz="${iyz2}" izz="${izz2}"/>
   </xacro:second_leg>
-
   <xacro:second_leg prefix="B2" parent="B1">
     <origin xyz="${joint_x2} ${joint_y2} ${joint_z2}" rpy="0 0 0"/>
     <origin xyz="-${visual_x2} -${visual_y2} ${visual_z2}"/>
-    <origin xyz="${x2} ${y2} ${z2}"/>
+    <origin xyz="-${visual_x2} -${visual_y2} ${visual_z2}"/>
+    <origin xyz="-${x2} -${y2} ${z2}"/>
     <inertia ixx="${ixx2}" ixy="${ixy2}" ixz="${ixz2}" iyy="${iyy2}" iyz="-${iyz2}" izz="${izz2}"/>
   </xacro:second_leg>
-
   <xacro:second_leg prefix="C2" parent="C1">
     <origin xyz="-${joint_x2} -${joint_y2} ${joint_z2}" rpy="0 0 0"/>
     <origin xyz="${visual_x2} ${visual_y2} ${visual_z2}"/>
-    <origin xyz="-${x2} -${y2} ${z2}"/>
+    <origin xyz="${visual_x2} ${visual_y2} ${visual_z2}"/>
+    <origin xyz="${x2} ${y2} ${z2}"/>
     <inertia ixx="${ixx2}" ixy="${ixy2}" ixz="-${ixz2}" iyy="${iyy2}" iyz="${iyz2}" izz="${izz2}"/>
   </xacro:second_leg>
-
   <xacro:second_leg prefix="D2" parent="D1">
     <origin xyz="-${joint_x2} ${joint_y2} ${joint_z2}" rpy="0 0 0"/>
     <origin xyz="${visual_x2} -${visual_y2} ${visual_z2}"/>
-    <origin xyz="-${x2} ${y2} ${z2}"/>
+    <origin xyz="${visual_x2} -${visual_y2} ${visual_z2}"/>
+    <origin xyz="${x2} -${y2} ${z2}"/>
     <inertia ixx="${ixx2}" ixy="${ixy2}" ixz="${ixz2}" iyy="${iyy2}" iyz="-${iyz2}" izz="${izz2}"/>
   </xacro:second_leg>
 
   <xacro:third_leg prefix="A3" parent="A2">
     <origin xyz="${joint_x3} -${joint_y3} ${joint_z3}" rpy="0 0 0"/>
     <origin xyz="-${visual_x3} ${visual_y3} ${visual_z3}"/>
-    <origin xyz="${x3} -${y3} ${z3}"/>
+    <origin xyz="-${visual_x3} ${visual_y3} ${visual_z3}"/>
+    <origin xyz="${x3} ${y3} ${z3}"/>
     <inertia ixx="${ixx3}" ixy="${ixy3}" ixz="-${ixz3}" iyy="${iyy3}" iyz="${iyz3}" izz="${izz3}"/>
   </xacro:third_leg>
 
   <xacro:third_leg prefix="B3" parent="B2">
     <origin xyz="${joint_x3} ${joint_y3} ${joint_z3}" rpy="0 0 0"/>
     <origin xyz="-${visual_x3} -${visual_y3} ${visual_z3}"/>
-    <origin xyz="${x3} ${y3} ${z3}"/>
+    <origin xyz="-${visual_x3} -${visual_y3} ${visual_z3}"/>
+    <origin xyz="${x3} -${y3} ${z3}"/>
     <inertia ixx="${ixx3}" ixy="${ixy3}" ixz="${ixz3}" iyy="${iyy3}" iyz="-${iyz3}" izz="${izz3}"/>
   </xacro:third_leg>
 
   <xacro:third_leg prefix="C3" parent="C2">
     <origin xyz="-${joint_x3} -${joint_y3} ${joint_z3}" rpy="0 0 0"/>
     <origin xyz="${visual_x3} ${visual_y3} ${visual_z3}"/>
-    <origin xyz="-${x3} -${y3} ${z3}"/>
+    <origin xyz="${visual_x3} ${visual_y3} ${visual_z3}"/>
+    <origin xyz="${x3} ${y3} ${z3}"/>
     <inertia ixx="${ixx3}" ixy="${ixy3}" ixz="-${ixz3}" iyy="${iyy3}" iyz="${iyz3}" izz="${izz3}"/>
   </xacro:third_leg>
 
   <xacro:third_leg prefix="D3" parent="D2">
     <origin xyz="-${joint_x3} ${joint_y3} ${joint_z3}" rpy="0 0 0"/>
     <origin xyz="${visual_x3} -${visual_y3} ${visual_z3}"/>
-    <origin xyz="-${x3} ${y3} ${z3}"/>
+    <origin xyz="${visual_x3} -${visual_y3} ${visual_z3}"/>
+    <origin xyz="${x3} -${y3} ${z3}"/>
     <inertia ixx="${ixx3}" ixy="${ixy3}" ixz="${ixz3}" iyy="${iyy3}" iyz="-${iyz3}" izz="${izz3}"/>
   </xacro:third_leg>
 
@@ -148,11 +161,6 @@
   <xacro:leg_trans prefix="D3"/>
 
   <!-- =============== Gazebo =============== -->
-  <gazebo>
-    <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
-      <!-- <robotNamespace>fourth_robot</robotNamespace> -->
-    </plugin>
-  </gazebo>
 
   <!-- Body -->
   <gazebo>

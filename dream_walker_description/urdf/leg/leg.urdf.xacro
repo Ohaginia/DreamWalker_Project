@@ -7,7 +7,7 @@
   <xacro:include filename="$(find dream_walker_description)/urdf/leg/color.xacro"/>
 
 
-  <xacro:macro name="zero_leg" params="prefix parent *joint_origin *visual_origin *inertial_origin *inertia">
+  <xacro:macro name="zero_leg" params="prefix parent *joint_origin *visual_origin *collision_origin  *inertial_origin *inertia">
     <joint name="${prefix}_joint" type="fixed">
       <insert_block name="joint_origin"/>
       <parent link="${parent}_link"/>
@@ -24,6 +24,7 @@
         <material name="black"/>
       </visual>
       <collision>
+        <insert_block name="collision_origin"/>
         <geometry>
           <mesh filename="package://dream_walker_description/meshes/${prefix}_link.STL"/>
         </geometry>
@@ -36,7 +37,7 @@
     </link>
   </xacro:macro>
   
-  <xacro:macro name="first_leg" params="prefix parent *joint_origin *visual_origin *inertial_origin *inertia">
+  <xacro:macro name="first_leg" params="prefix parent *joint_origin *visual_origin *collision_origin *inertial_origin *inertia">
     <joint name="${prefix}_joint" type="revolute">
       <insert_block name="joint_origin"/>
       <parent link="${parent}_link"/>
@@ -54,6 +55,7 @@
         <material name="black"/>
       </visual>
       <collision>
+        <insert_block name="collision_origin"/>
         <geometry>
           <mesh filename="package://dream_walker_description/meshes/${prefix}_link.STL"/>
         </geometry>
@@ -66,7 +68,7 @@
     </link>
   </xacro:macro>
 
-  <xacro:macro name="second_leg" params="prefix parent *joint_origin *visual_origin *inertial_origin *inertia">
+  <xacro:macro name="second_leg" params="prefix parent *joint_origin *visual_origin *collision_origin *inertial_origin *inertia">
     <joint name="${prefix}_joint" type="revolute">
       <insert_block name="joint_origin"/>
       <parent link="${parent}_link"/>
@@ -84,6 +86,7 @@
         <material name="red"/>
       </visual>
       <collision>
+        <insert_block name="collision_origin"/>
         <geometry>
           <mesh filename="package://dream_walker_description/meshes/${prefix}_link.STL"/>
         </geometry>
@@ -96,7 +99,7 @@
     </link>
   </xacro:macro>
 
-  <xacro:macro name="third_leg" params="prefix parent *joint_origin *visual_origin *inertial_origin *inertia">
+  <xacro:macro name="third_leg" params="prefix parent *joint_origin *visual_origin *collision_origin *inertial_origin *inertia">
     <joint name="${prefix}_joint" type="revolute">
       <insert_block name="joint_origin"/>
       <parent link="${parent}_link"/>
@@ -114,6 +117,7 @@
         <material name="silver"/>
       </visual>
       <collision>
+        <insert_block name="collision_origin"/>
         <geometry>
           <mesh filename="package://dream_walker_description/meshes/${prefix}_link.STL"/>
         </geometry>

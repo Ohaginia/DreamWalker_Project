@@ -8,23 +8,23 @@
   <property name="mass3" value="1.72"/>
 
 
-  <property name="x0" value="0.26100"/>
-  <property name="x1" value="0.11810"/>
-  <property name="x2" value="0.00440"/>
-  <property name="x3" value="0.00000"/>
-  <property name="x4" value="0.00000"/>
+  <property name="x0" value="0.03900"/>
+  <property name="x1" value="0.00440"/>
+  <property name="x2" value="0.0000"/>
+  <property name="x3" value="0.0000"/>
+  <property name="x4" value="0.0000"/>
 
-  <property name="y0" value="0.082980"/>
-  <property name="y1" value="0.001110"/>
-  <property name="y2" value="0.161810"/>
-  <property name="y3" value="0.111690"/>
-  <property name="y4" value="0.002140"/>
+  <property name="y0" value="0.00002"/>
+  <property name="y1" value="0.00113"/>
+  <property name="y2" value="0.04882"/>
+  <property name="y3" value="0.00214"/>
+  <property name="y4" value="0.00000"/>
 
   <property name="z0" value="-0.00001"/>
-  <property name="z1" value="-0.00004"/>
-  <property name="z2" value="-0.09715"/>
-  <property name="z3" value="-0.41291"/>
-  <property name="z4" value="-0.25289"/>
+  <property name="z1" value="-0.00005"/>
+  <property name="z2" value="-0.09719"/>
+  <property name="z3" value="-0.19011"/>
+  <property name="z4" value="-0.00000"/>
 
   <property name="joint_x0" value="0.30000"/>
   <property name="joint_x1" value="0.08350"/>
@@ -88,5 +88,35 @@
   <property name="izz1" value="0.002511"/>
   <property name="izz2" value="0.011896"/>
   <property name="izz3" value="0.001426"/>
+
+  <property name="ixx0a" value="0.01422"/>
+  <property name="ixx1a" value="0.00229"/>
+  <property name="ixx2a" value="0.075241"/>
+  <property name="ixx3a" value="0.026984"/>
+
+  <property name="ixy0a" value="0.038006"/>
+  <property name="ixy1a" value="0.000008"/>
+  <property name="ixy2a" value="0"/>
+  <property name="ixy3a" value="0"/>
+
+  <property name="ixz0a" value="0"/>
+  <property name="ixz1a" value="1.0E-06"/>
+  <property name="ixz2a" value="5.0E-06"/>
+  <property name="ixz3a" value="0"/>
+
+  <property name="iyy0a" value="0121986"/>
+  <property name="iyy1a" value="0.002657"/>
+  <property name="iyy2a" value="0.069683"/>
+  <property name="iyy3a" value="0.026649"/>
+
+  <property name="iyz0a" value="0.000002"/>
+  <property name="iyz1a" value="1.0E-06"/>
+  <property name="iyz2a" value="0.013776"/>
+  <property name="iyz3a" value="0.000717"/>
+
+  <property name="izz0a" value="0.134071"/>
+  <property name="izz1a" value="0.002511"/>
+  <property name="izz2a" value="0.011896"/>
+  <property name="izz3a" value="0.001426"/>
 
 </robot>
