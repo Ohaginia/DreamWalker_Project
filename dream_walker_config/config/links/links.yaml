@@ -1,24 +1,24 @@
 base: base_link
 left_front:
-  - A1_link
-  - A2_link
-  - A3_link
-  - A4_link
-
-right_front:
   - B1_link
   - B2_link
   - B3_link
   - B4_link
 
-left_hind:
-  - C1_link
-  - C2_link
-  - C3_link
-  - C4_link
+right_front:
+  - A1_link
+  - A2_link
+  - A3_link
+  - A4_link
 
-right_hind:
+left_hind:
   - D1_link
   - D2_link
   - D3_link
   - D4_link
+
+right_hind:
+  - C1_link
+  - C2_link
+  - C3_link
+  - C4_link

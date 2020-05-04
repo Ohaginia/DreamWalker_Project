@@ -2,55 +2,55 @@
     "urdf_path": "/home/shoma/ros_ws/src/dream_walker_description/robots/dream_walker.urdf", 
     "links": {
         "right_hind": [
-            "D1_link", 
-            "D2_link", 
-            "D3_link", 
-            "D4_link"
-        ], 
-        "right_front": [
-            "B1_link", 
-            "B2_link", 
-            "B3_link", 
-            "B4_link"
-        ], 
-        "base": "base_link", 
-        "left_hind": [
             "C1_link", 
             "C2_link", 
             "C3_link", 
             "C4_link"
         ], 
-        "left_front": [
+        "right_front": [
             "A1_link", 
             "A2_link", 
             "A3_link", 
             "A4_link"
+        ], 
+        "base": "base_link", 
+        "left_hind": [
+            "D1_link", 
+            "D2_link", 
+            "D3_link", 
+            "D4_link"
+        ], 
+        "left_front": [
+            "B1_link", 
+            "B2_link", 
+            "B3_link", 
+            "B4_link"
         ]
     }, 
     "joints": {
         "right_hind": [
-            "D1_joint", 
-            "D2_joint", 
-            "D3_joint", 
-            "D4_joint"
-        ], 
-        "right_front": [
-            "B1_joint", 
-            "B2_joint", 
-            "B3_joint", 
-            "B4_joint"
-        ], 
-        "left_hind": [
             "C1_joint", 
             "C2_joint", 
             "C3_joint", 
             "C4_joint"
         ], 
-        "left_front": [
+        "right_front": [
             "A1_joint", 
             "A2_joint", 
             "A3_joint", 
             "A4_joint"
+        ], 
+        "left_hind": [
+            "D1_joint", 
+            "D2_joint", 
+            "D3_joint", 
+            "D4_joint"
+        ], 
+        "left_front": [
+            "B1_joint", 
+            "B2_joint", 
+            "B3_joint", 
+            "B4_joint"
         ]
     }, 
     "firmware": {
@@ -66,7 +66,7 @@
                 ], 
                 "upper_leg": [
                     0.0, 
-                    0.2095, 
+                    -0.2095, 
                     -0.0, 
                     0.0, 
                     0.0, 
@@ -82,7 +82,7 @@
                 ], 
                 "lower_leg": [
                     0.0, 
-                    0.065, 
+                    -0.065, 
                     -0.32, 
                     0.0, 
                     0.0, 
@@ -100,6 +100,40 @@
                 ], 
                 "upper_leg": [
                     0.0, 
+                    -0.2095, 
+                    -0.0, 
+                    0.0, 
+                    0.0, 
+                    0.0
+                ], 
+                "foot": [
+                    0.0, 
+                    0.0, 
+                    -0.443, 
+                    0.0, 
+                    0.0, 
+                    0.0
+                ], 
+                "lower_leg": [
+                    0.0, 
+                    -0.065, 
+                    -0.32, 
+                    0.0, 
+                    0.0, 
+                    0.0
+                ]
+            }, 
+            "left_hind": {
+                "hip": [
+                    -0.3835, 
+                    0.083, 
+                    0.0, 
+                    0.0, 
+                    0.0, 
+                    0.0
+                ], 
+                "upper_leg": [
+                    0.0, 
                     0.2095, 
                     -0.0, 
                     0.0, 
@@ -123,40 +157,6 @@
                     0.0
                 ]
             }, 
-            "left_hind": {
-                "hip": [
-                    -0.3835, 
-                    0.083, 
-                    0.0, 
-                    0.0, 
-                    0.0, 
-                    0.0
-                ], 
-                "upper_leg": [
-                    0.0, 
-                    -0.2095, 
-                    -0.0, 
-                    0.0, 
-                    0.0, 
-                    0.0
-                ], 
-                "foot": [
-                    0.0, 
-                    0.0, 
-                    -0.443, 
-                    0.0, 
-                    0.0, 
-                    0.0
-                ], 
-                "lower_leg": [
-                    0.0, 
-                    -0.065, 
-                    -0.32, 
-                    0.0, 
-                    0.0, 
-                    0.0
-                ]
-            }, 
             "left_front": {
                 "hip": [
                     0.3835, 
@@ -168,7 +168,7 @@
                 ], 
                 "upper_leg": [
                     0.0, 
-                    -0.2095, 
+                    0.2095, 
                     -0.0, 
                     0.0, 
                     0.0, 
@@ -184,7 +184,7 @@
                 ], 
                 "lower_leg": [
                     0.0, 
-                    -0.065, 
+                    0.065, 
                     -0.32, 
                     0.0, 
                     0.0, 

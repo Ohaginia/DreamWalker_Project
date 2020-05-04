@@ -4,8 +4,8 @@
     <arg name="gait_config_file" default="$(find dream_walker_config)/config/gait/gait.yaml"/>
     <arg name="description_file" default="/home/shoma/ros_ws/src/dream_walker_description/robots/dream_walker.urdf"/>
     <arg name="base_frame"       default="odom"/>
-    <arg name="has_imu"          default="false" />
-    <arg name="rviz"             default="true"/>
+    <arg name="has_imu"          default="true" />
+    <arg name="rviz"             default="false"/>
     <arg name="gazebo"           default="false" />
     <arg name="lite"             default="false" />
     <arg name="laser"            default="sim"/>
